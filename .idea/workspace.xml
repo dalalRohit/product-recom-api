@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12d1ff1d-2854-4bfc-b4f2-a476768d217c" name="Default Changelist" comment="" />
+    <list default="true" id="12d1ff1d-2854-4bfc-b4f2-a476768d217c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +23,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WIGZWVdvmYScFmygxoh5rEQiMe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,6 +35,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\BE PROJECT\flask-rest" />
+      <recent name="D:\Work\BE PROJECT\flask-rest\spiders" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -55,6 +68,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="495" y="205" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583585000591">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="495" y="205" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1583585000591" />
     <state x="483" y="263" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578829778618">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -63,5 +80,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="169" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1578830328868" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1582883389973">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1582883389973" />
   </component>
 </project>
