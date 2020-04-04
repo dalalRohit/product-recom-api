@@ -55,14 +55,14 @@ class TestSpider(scrapy.Spider):
         helpfuls = data.css('.cr-vote-text::text').extract()
 
         for i in range(0,len(usernames)):
-            items['username']=usernames[i]
-            items['date']=dates[i]
-            items['profile']=profiles[i]
-            items['review_title']=review_title[i]
-            items['comments']=comments[i]
-            items['star_rating']=star_ratings[i]
-            items['verified']=verifieds[i]
-            items['helpful']=helpfuls[i]
+            items['username']=usernames[i].strip()
+            items['date']=dates[i].strip()
+            items['profile']=profiles[i].strip()
+            items['review_title']=review_title[i].strip()
+            items['comments']=comments[i].strip()
+            items['star_rating']=star_ratings[i].strip()
+            items['verified']=verifieds[i].strip()
+            items['helpful']=helpfuls[i].strip()
 
 
             yield items

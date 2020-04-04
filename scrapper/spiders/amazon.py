@@ -7,7 +7,7 @@ class AmazonSpider(scrapy.Spider):
     def __init__(self,product='',asin='', **kwargs):
         self.url="https://www.amazon.in/{}/product-reviews/{}/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber=".format(product,asin)
         self.start_urls = []  # py36
-        for i in range(1,100):
+        for i in range(1,50):
             self.start_urls.append(self.url+str(i))
 
         super().__init__(**kwargs)  # python3
@@ -44,7 +44,7 @@ class AmazonSpider(scrapy.Spider):
         comments = data.css('.review-text-content span::text').extract()
 
         # Collecting review title
-        review_title = data.css('.review-title span::text').extract() #pending
+        review_title = data.css('.review-title span::text').extract()
 
         # verified
         verifieds = data.css('span.a-color-state.a-text-bold::text').extract()
@@ -60,7 +60,7 @@ class AmazonSpider(scrapy.Spider):
             items['comments']=comments[i].strip()
             items['star_rating']=star_ratings[i].strip()
             items['verified']=verifieds[i].strip()
-            items['helpful']=helpfuls[i].strip()
+            # items['helpful']=helpfuls[i].strip()
 
 
             yield items

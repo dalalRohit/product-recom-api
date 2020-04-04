@@ -7,7 +7,6 @@
 
 import pymongo
 class ScrapperPipeline(object):
-
     def __init__(self):
         self.conn=pymongo.MongoClient(
             'localhost',

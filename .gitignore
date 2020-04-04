@@ -3,3 +3,8 @@ dbs
 .idea
 env
 logs
+.ipynb_checkpoints
+reviews
+*.csv
+*.ipynb
+results
