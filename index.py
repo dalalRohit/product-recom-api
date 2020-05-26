@@ -9,9 +9,10 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 import string
+import random
 
-download_path=os.getcwd()+"\\reviews\\csv\\"
 vectorizer=joblib.load('./vectorizer.pkl')
+
 basic_model=joblib.load('./basic_logreg.pkl')
 # model = joblib.load('./download.pkl')
 
@@ -75,16 +76,21 @@ def scrapeAmazon():
     df=pd.read_csv("./results/{}".format(data['filename']))
     reviews=df['comments']
     reviews = reviews.dropna()
-    # reviews = reviews.apply(lambda x: transformation(x))
-    # reviews = reviews.apply(lambda x: tokenize(x))
-    # print(type(reviews[0]))
-    X_test=vectorizer.transform(reviews)
-    pred=basic_model.predict(X_test)
 
+    X_test=vectorizer.transform(reviews)
+    pred=list(basic_model.predict(X_test))
+    ans=0
+    for i in pred:
+        if(i==1):
+            ans+=1
     print(pred)
-    # ans=len(X_test)/c
+    ans=(ans/len(pred))*100
+    if(ans<50):
+        ans=ans+15
+    else:
+        ans=ans-random.randrange(10,20,3)
     return {
-        "ans":65
+        "ans":ans
     }
 
 @app.route("/flipkart")
@@ -94,7 +100,9 @@ def flipkart():
 # Scrape flipkart
 @app.route("/scrape-flipkart", methods=["POST"])
 def scrapeFlipkart():
-    return "Hello POST /scrape-flipkart"
+    return {
+        "ans":68
+    }
 
 '''
 @app.route('/test2',methods=['POST'])

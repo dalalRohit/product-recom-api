@@ -1,5 +1,5 @@
 import scrapy
-from ..items import ScrapperItem
+from ..AmazonItems import ScrapperItem
 
 
 class AmazonSpider(scrapy.Spider):

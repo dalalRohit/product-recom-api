@@ -1,71 +1,50 @@
 import scrapy
-from ..items import ScrapperItem
+from ..FlipkartItems import ScrapperItem
 
-from scrapy.crawler import CrawlerProcess
 
-class FlipkartSpider(scrapy.Spider):
+class FKSpider(scrapy.Spider):
 
     def __init__(self,product='',asin='', **kwargs):
-        self.url="https://www.flipkart.com/{}/product-reviews/{}/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber=".format(product,asin)
+        self.url="https://www.flipkart.com/mi-a3-kind-grey-64-gb/product-reviews/itm280ef520ac1d9?pid=MOBFJM4ZZW6NTSZH&lid=LSTMOBFJM4ZZW6NTSZHU6DTVH&marketplace=FLIPKART&page="
         self.start_urls = []  # py36
-        for i in range(1,50):
+        for i in range(1,3):
             self.start_urls.append(self.url+str(i))
 
         super().__init__(**kwargs)  # python3
 
-    # Spider name
-    name = 'flipkart'
+    name = "flipkart"
 
-    # Domain names to scrape
     allowed_domains = ['flipkart.com']
 
-
-    # Defining a Scrapy parser
+    # Parse function
     def parse(self, response):
-        print(response.url)
         items=ScrapperItem()
 
-        # <div> of all reviews
-        data = response.css('#cm_cr-review_list')
+        #divs
+        div=response.css('._1PBCrt')
 
-        # Usernames
-        usernames = data.css('.a-profile-name::text').extract()
+        # username and dates
+        username_dates=div.css('p._3LYOAd::text').extract()
+        print("Length of username_dates: ",len(username_dates))
 
-        # Profiles
-        profiles = data.css('.a-profile::attr(href)').getall()
-        for i in range(len(profiles)):
-            profiles[i] = 'https://amazon.in/'+profiles[i]
-
-        # User review date
-        dates = data.css('.review-date::text').extract()
-
-        # Collecting product star ratings
-        star_ratings = data.css('.review-rating .a-icon-alt::text').extract()
-
-        # Collecting user reviews
-        comments = data.css('.review-text-content span::text').extract()
-
-        # Collecting review title
-        review_title = data.css('.review-title span::text').extract() #pending
-
-        # verified
-        verifieds = data.css('span.a-color-state.a-text-bold::text').extract()
-
-        # helpful
-        helpfuls = data.css('.cr-vote-text::text').extract()
-
-        for i in range(0,len(usernames)):
-            items['username']=usernames[i].strip()
-            items['date']=dates[i].strip()
-            items['profile']=profiles[i].strip()
-            items['review_title']=review_title[i].strip()
-            items['comments']=comments[i].strip()
-            items['star_rating']=star_ratings[i].strip()
-            items['verified']=verifieds[i].strip()
-            items['helpful']=helpfuls[i].strip()
+        #certified buyer and location
+        buyer_location=div.css('._19inI8 span::text').extract()
+        print("Length of buyer_location: ",len(buyer_location))
 
 
-            yield items
+        #content
+        content=div.css('.qwjRop div div::text').extract()
+        print("Length of content: ",len(content))
+
+
+        # for i in range(0,len(username_dates)):
+        #     print(username_dates[i])
+
+
+
+
+
+
 
 
 

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12d1ff1d-2854-4bfc-b4f2-a476768d217c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1plus_rohit.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapper/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapper/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/AmazonItems.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scrapper/spiders/amazon.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/spiders/amazon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapper/spiders/flipkart.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/spiders/flipkart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scrapper/spiders/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapper/spiders/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
